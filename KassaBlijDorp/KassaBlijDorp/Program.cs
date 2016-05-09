@@ -27,17 +27,25 @@ namespace KassaBlijDorp
   {
     public string bereken1(string v , string k)
     {
-      int totaal=0;
+      double totaal = 0;
       int Iv = Convert.ToInt32(v);
       int Ik = Convert.ToInt32(k);
+      double vP = 22.00;
+      double kP = 17.50;
 
-      if (Iv != 0)
+      if (Ik+ Iv >= 20)
       {
-        totaal += (Iv * 20);
+        vP -= 2;
+        kP -= 2;
       }
-      if (Ik != 0)
+
+      if (Iv > 0)
       {
-        totaal +=( Ik * 17);
+        totaal += (Iv * vP);
+      }
+      if (Ik > 0)
+      {
+        totaal +=( Ik * kP);
       }
       string EindTotaal = totaal.ToString();
       return EindTotaal;
