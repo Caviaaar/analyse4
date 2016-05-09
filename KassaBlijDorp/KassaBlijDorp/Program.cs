@@ -49,7 +49,7 @@ namespace KassaBlijDorp
 
       int Intr = Ia * 4;
 
-      if (Ik+ Iv >= 20)
+      if (Ik + Iv + Ib >= 20)
       {
         vP -= 2;
         kP -= 2;
