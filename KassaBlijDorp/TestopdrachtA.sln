@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KassaBlijDorp", "KassaBlijDorp\KassaBlijDorp.csproj", "{3B4853EB-A8AC-4D0A-A06A-3E3AAE7BF4DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geldautomaat", "Geldautomaat\Geldautomaat.csproj", "{E203F3C9-D899-462E-8596-732AB7BC47B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3B4853EB-A8AC-4D0A-A06A-3E3AAE7BF4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B4853EB-A8AC-4D0A-A06A-3E3AAE7BF4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B4853EB-A8AC-4D0A-A06A-3E3AAE7BF4DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E203F3C9-D899-462E-8596-732AB7BC47B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E203F3C9-D899-462E-8596-732AB7BC47B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E203F3C9-D899-462E-8596-732AB7BC47B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E203F3C9-D899-462E-8596-732AB7BC47B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
