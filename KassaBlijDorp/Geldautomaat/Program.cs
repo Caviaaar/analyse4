@@ -73,13 +73,13 @@ namespace Geldautomaat
         else
         {
           Console.WriteLine("Voer een getal groter dan 0 in!");
-          return Input(text, true);
+          return Input(text, neg);
         }
       }
       else
       {
         Console.WriteLine("Ongeldige invoer. Voer een getal in!");
-        return Input(text);
+        return Input(text, neg);
       }
     }
 
