@@ -99,7 +99,7 @@ namespace KassaBlijDorp
         totaal -= (disc * vP) * Intr;
       }
 
-
+      totaal = Math.Round(totaal, 2);
       string EindTotaal = totaal.ToString();
       return EindTotaal;
     }
