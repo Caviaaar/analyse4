@@ -41,7 +41,7 @@ namespace Geldautomaat
       string werkend = Console.ReadLine();
 
       string[] array = { "N", "n", "Y", "y" };
-      if (array.Any(werkend.Contains))
+      if (array.Any(werkend.Equals))
       {
         if (werkend == "Y" || werkend == "y")
         {
