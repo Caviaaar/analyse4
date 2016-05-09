@@ -97,7 +97,7 @@ namespace Geldautomaat
             }
             else
             {
-              return "De transactie is mislukt. U overschrijdt uw dagmlimiet!";
+              return "De transactie is mislukt. U overschrijdt uw daglimiet!";
             }
           }
           else
