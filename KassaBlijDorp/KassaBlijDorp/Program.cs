@@ -18,7 +18,7 @@ namespace KassaBlijDorp
       kinderen = Console.ReadLine();
       bereken test = new bereken();
       Console.WriteLine(test.bereken1(volwassenen, kinderen));
-
+      Console.ReadLine();
 
 
     }
