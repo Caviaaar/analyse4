@@ -10,79 +10,95 @@ namespace KassaBlijDorp
   {
     static void Main(string[] args)
     {
-      string volwassenen;
-      string kinderen;
-      string begeleider;
-      string abonnement;
-      Console.WriteLine("Aantal volwassenen (vanaf 13 jaar, zonder abonnement):");
-      volwassenen = Console.ReadLine();
-
-      Console.WriteLine("Aantal kinderen (3 t/m 12 jaar, zonder abonnement):");
-      kinderen = Console.ReadLine();
-
-      Console.WriteLine("Aantal begeleiders van gehandicapte personen (zonder abonnement):");
-      begeleider = Console.ReadLine();
-
-      Console.WriteLine("Aantal abonnementhouders:");
-      abonnement = Console.ReadLine();
-
-      bereken test = new bereken();
-      Console.WriteLine(test.bereken1(volwassenen, kinderen, begeleider, abonnement));
+      Kassa K = new Kassa();
+      Console.WriteLine(K.Bereken());
       Console.ReadLine();
-
-
     }
   }
-  class bereken
+
+  class Kassa
   {
-    public string bereken1(string v , string k, string b, string a)
+    public int Volwassenen;
+    public int Kinderen;
+    public int Begeleiders;
+    public int Abonnement;
+
+    public Kassa()
+    {
+      this.Volwassenen = Input("Aantal volwassenen (vanaf 13 jaar, zonder abonnement): ");
+      this.Kinderen = Input("Aantal kinderen (3 t/m 12 jaar, zonder abonnement): ");
+      this.Begeleiders = Input("Aantal begeleiders van gehandicapte personen (zonder abonnement): ");
+      this.Abonnement = Input("Aantal abonnementhouders: ");
+    }
+
+    public int Input(string text)
+    {
+      int value;
+      Console.WriteLine(text);
+      string input = Console.ReadLine();
+      if (int.TryParse(input, out value))
+      {
+        if(value < 0)
+        {
+          Console.WriteLine("Ongeldige invoer. Voer een geheel getal groter of gelijk aan 0 in!");
+          return Input(text);
+        }
+        else
+        {
+          return value;
+        }
+      }
+      else
+      {
+        Console.WriteLine("Ongeldige invoer. Voer een geheel getal in!");
+        return Input(text);
+      }
+    }
+
+    public double Bereken()
     {
       double totaal = 0;
-      int Iv = Convert.ToInt32(v);
-      int Ik = Convert.ToInt32(k);
-      int Ib = Convert.ToInt32(b);
-      int Ia = Convert.ToInt32(a);
       double vP = 22.00;
       double kP = 17.50;
       double bP = 12.00;
       double disc = 0.25;
 
-      int Intr = Ia * 4;
+      int Intr = Abonnement * 4;
 
-      if (Ik + Iv + Ib >= 20)
+      if (Kinderen + Volwassenen + Begeleiders >= 20)
       {
         vP -= 2;
         kP -= 2;
       }
 
-      if (Iv > 0)
+      if (Volwassenen > 0)
       {
-        totaal += (Iv * vP);
+        totaal += (Volwassenen * vP);
       }
 
-      if (Ik > 0)
+      if (Kinderen > 0)
       {
-        totaal +=( Ik * kP);
+        totaal += (Kinderen * kP);
       }
 
-      if (Ib > 0)
+      if (Begeleiders > 0)
       {
-        totaal += (Ib * bP);
+        totaal += (Begeleiders * bP);
       }
 
-      if (Intr >= Iv)
+      if (Intr >= Volwassenen)
       {
-        totaal -= (disc * vP) * Iv;
-        Intr -= Iv;
+        totaal -= (disc * vP) * Volwassenen;
+        Intr -= Volwassenen;
 
-        if (Intr >= Ik)
+        if (Intr >= Kinderen)
         {
-          totaal -= (disc * kP) * Ik;
-          Intr -= Ik;
+          totaal -= (disc * kP) * Kinderen;
+          Intr -= Kinderen;
 
-          if(Intr >= Ib)
+          if (Intr >= Begeleiders)
           {
-            totaal -= (disc * bP) * Ib;
+            totaal -= (disc * bP) * Begeleiders;
           }
           else
           {
@@ -100,8 +116,7 @@ namespace KassaBlijDorp
       }
 
       totaal = Math.Round(totaal, 2);
-      string EindTotaal = totaal.ToString();
-      return EindTotaal;
+      return totaal;
     }
   }
 }
