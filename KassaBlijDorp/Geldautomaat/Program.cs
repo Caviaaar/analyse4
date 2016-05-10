@@ -27,28 +27,60 @@ namespace Geldautomaat
 
     public Automaat()
     {
-      this.Saldo = Input("Voer uw banksaldo in: ");
+      this.Saldo = Input("Voer uw banksaldo in: ",true);
       this.Limiet = Input("Voer uw daglimiet in: ");
       this.Krediet = Input("Voer uw kredietlimiet in: ");
       this.Voorraad = Input("Voer het beschikbare bedrag in de geldautomaat in: ");
       this.Opname = Input("Voer het bedrag in wat u op wilt nemen: ");
+      this.Actief = CheckActief();
+    }
 
+    public bool CheckActief()
+    {
       Console.WriteLine("Is de automaat in werking (Y/N): ");
       string werkend = Console.ReadLine();
-      if(werkend == "Y" || werkend == "y")
+
+      string[] array = { "N", "n", "Y", "y" };
+      if (array.Any(werkend.Equals))
       {
-        this.Actief = true;
+        if (werkend == "Y" || werkend == "y")
+        {
+          return true;
+        }
+        else
+        {
+          return false;
+        }
       }
       else
       {
-        this.Actief = false;
+        Console.WriteLine("Ongeldige invoer. Voer Y of N in!");
+        return CheckActief();
       }
     }
 
-    public double Input(string text)
+    public double Input(string text, bool neg = false)
     {
+      double value;
       Console.WriteLine(text);
-      return Convert.ToDouble(Console.ReadLine());
+      string input = Console.ReadLine();
+      if(double.TryParse(input, out value))
+      {
+        if (value >= 0 || neg == true) 
+        {
+          return value;
+        }
+        else
+        {
+          Console.WriteLine("Voer een getal groter dan 0 in!");
+          return Input(text, neg);
+        }
+      }
+      else
+      {
+        Console.WriteLine("Ongeldige invoer. Voer een getal in!");
+        return Input(text, neg);
+      }
     }
 
     public string Opnemen()
@@ -65,7 +97,7 @@ namespace Geldautomaat
             }
             else
             {
-              return "De transactie is mislukt. U overschrijdt uw dagmlimiet!";
+              return "De transactie is mislukt. U overschrijdt uw daglimiet!";
             }
           }
           else
