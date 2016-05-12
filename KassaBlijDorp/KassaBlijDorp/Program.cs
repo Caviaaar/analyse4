@@ -28,10 +28,10 @@ namespace KassaBlijDorp
       this.Volwassenen = Input("Aantal volwassenen (vanaf 13 jaar, zonder abonnement): ");
       this.Kinderen = Input("Aantal kinderen (3 t/m 12 jaar, zonder abonnement): ");
       this.Begeleiders = Input("Aantal begeleiders van gehandicapte personen (zonder abonnement): ");
-      this.Abonnement = Input("Aantal abonnementhouders: ");
+      this.Abonnement = Input("Aantal abonnementhouders: ",true);
     }
 
-    public int Input(string text)
+    public int Input(string text,bool abo=false)
     {
       int value;
       Console.WriteLine(text);
@@ -40,8 +40,15 @@ namespace KassaBlijDorp
       {
         if(value < 0)
         {
-          Console.WriteLine("Ongeldige invoer. Voer een geheel getal groter of gelijk aan 0 in!");
-          return Input(text);
+          if (abo)
+          {
+            return value;
+          }
+          else
+          {
+            Console.WriteLine("Ongeldige invoer. Voer een geheel getal groter dan 0 in!");
+            return Input(text);
+          }
         }
         else
         {
