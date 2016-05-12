@@ -102,7 +102,7 @@ namespace Geldautomaat
           }
           else
           {
-            return "De transactie is mislukt. Er is niet voldoende geld voorradig";
+            return "De transactie is mislukt. Er is onvoldoende geld voorradig.";
           }
         }
         else
