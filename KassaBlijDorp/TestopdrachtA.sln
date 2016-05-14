@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KassaBlijDorp", "KassaBlijD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geldautomaat", "Geldautomaat\Geldautomaat.csproj", "{E203F3C9-D899-462E-8596-732AB7BC47B6}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "AnalysePeriode4", "E:\Downloads\AnalysePeriode4\AnalysePeriode4\AnalysePeriode4\AnalysePeriode4.pyproj", "{7939269D-9F4D-4605-8DFB-9A047C2DBCC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{E203F3C9-D899-462E-8596-732AB7BC47B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E203F3C9-D899-462E-8596-732AB7BC47B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E203F3C9-D899-462E-8596-732AB7BC47B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7939269D-9F4D-4605-8DFB-9A047C2DBCC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7939269D-9F4D-4605-8DFB-9A047C2DBCC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
